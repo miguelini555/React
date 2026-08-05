@@ -1,0 +1,42 @@
+<form action="/guardar" method="post">
+    <label for="nombre">
+        Nombre:
+    </label>
+    <input name="nombre" id="nombre">
+    <button type="submit"> Guardar </button>
+    <label for="apellido"></label>
+    <input name="apellido" id="apellido">
+</form>
+
+<hr>
+<form>
+    <fieldset>
+        <legend>Selecciona modalidad</legend>
+        <label>
+            <input type="radio" value="presencial" name="modalidad">
+            Presencial
+        </label>
+        <label>
+            <input type="radio" value="virtual" name="modalidad">
+            Virtual
+        </label>
+    </fieldset>
+
+    <Select>
+        <option value="A">Turno A</option>
+        <option value="B">Turno B</option>
+        <option value="C">Turno C</option>
+    </Select>
+    <br>
+    <label for="comentario"> Ingrese Comentario</label>
+    <textarea name="comentario" id="comentario"></textarea>
+
+    <br>
+    <button type="button">Vista Previa</button>
+    <br>
+    <button type="reset">Limpiar Formulario</button>
+    <br>
+    <button type="submit">Guardar</button>
+
+</form>
+
