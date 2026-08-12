@@ -1,0 +1,41 @@
+.mensaje {
+    margin-bottom: 20px;
+}
+
+.juego {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.td {
+    border-collapse: collapse;
+}
+
+.td th {
+    border: 2px solid black;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    color: transparent;
+}
+
+.td th:hover {
+    color: black;
+}
+
+.emoji {
+    font-size: 2rem;
+}
+
+.cara {
+    order: 1;
+}
+
+.mina {
+    order: 3;
+}
+
+.td {
+    order: 2;
+}
