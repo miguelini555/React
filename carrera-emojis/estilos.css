@@ -1,0 +1,38 @@
+.pista {
+    position: relative;
+    background-color: rgb(224, 218, 218);
+    width: 78.7rem;
+    height: 15rem;
+    border: 2px solid #243447;
+    border-radius: 8px;
+}
+
+.corredor {
+    height: 3rem;
+    padding: 0.9rem;
+    font-size: 1.5rem;
+
+}
+
+.meta {
+    position: absolute;
+    top: 0;
+    right: 3rem;
+    height: 100%;
+    border-right: 4px dashed #243447;
+}
+
+button {
+    color: white;
+    background-color: grey;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 0.5rem 0.4rem;
+    font-size: 1rem;
+}
+
+button:hover ~ .pista .corredor {
+    padding-left: 70rem;
+    background-color: rgb(224, 218, 218);
+    border-radius: 8px;
+}
