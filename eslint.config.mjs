@@ -1,0 +1,3 @@
+"scripts": {
+    "check.js" : "eslint"
+}
