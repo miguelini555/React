@@ -25,3 +25,6 @@ jobs:
 
       - name: Verificar node
         run: node --version
+
+      - name: Verificar npm
+        run: npm --version
