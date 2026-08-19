@@ -19,3 +19,6 @@ jobs:
 
       - name: Listado
         run: ls -la
+
+      - name: Instalar node
+        uses: actions/setup-node@v4
