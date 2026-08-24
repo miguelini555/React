@@ -1,0 +1,14 @@
+
+
+.td th {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(177, 169, 169);
+    border: 2px solid black;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.td th:hover {
+    background-color: orange;
+}
