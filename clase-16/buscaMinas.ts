@@ -17,6 +17,7 @@ if(celda){
 
 let listaElementos = document.querySelectorAll("td")
 
+for(const elemento of listaElementos){
     elemento.addEventListener("click", function() {
         console.log(elemento.textContent);
         console.log(elemento.classList.value);

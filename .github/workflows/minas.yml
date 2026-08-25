@@ -1,1 +1,5 @@
 name: Minitas
+
+on:
+  push:
+  workflow_dispatch:
