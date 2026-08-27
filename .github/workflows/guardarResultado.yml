@@ -25,3 +25,6 @@ jobs:
 
       - name: Verificar npm
         run: npm --version
+        
+      - name: Build Vite
+        run: npx vite build
