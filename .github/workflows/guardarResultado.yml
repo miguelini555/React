@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-        run:
-            working-directory: ./tres-en-raya
+      run:
+        working-directory: ./tres-en-raya
 
     steps:
       - name: Descargar Codigo
@@ -24,12 +24,17 @@ jobs:
 
       - name: Instalar node
         uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
       - name: Verificar node
         run: node --version
 
       - name: Verificar npm
         run: npm --version
-        
+
+      - name: Instalar dependencias
+        run: npm install
+
       - name: Build Vite
-        run: npx vite build
+        run: npm run build
