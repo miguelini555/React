@@ -8,9 +8,6 @@ jobs:
   hola:
     runs-on: ubuntu-latest
     steps:
-      - name: Saludar
-        run: echo  "Guardar Resultado"
-
       - name: Descargar Codigo
         uses: actions/checkout@v4
 
