@@ -7,7 +7,6 @@ on:
 jobs:
   hola:
     runs-on: ubuntu-latest
-
     steps:
       - name: Descargar Codigo
         uses: actions/checkout@v4
@@ -26,9 +25,3 @@ jobs:
 
       - name: Verificar npm
         run: npm --version
-
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Ejecutar build
-        run: npm run build
