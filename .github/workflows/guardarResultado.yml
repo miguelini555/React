@@ -7,6 +7,11 @@ on:
 jobs:
   hola:
     runs-on: ubuntu-latest
+
+    defaults:
+        run:
+            working-directory: ./tres-en-raya
+
     steps:
       - name: Descargar Codigo
         uses: actions/checkout@v4
