@@ -46,3 +46,6 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./tres-en-raya/dist
+
+      - name: Publicar
+        uses: actions/deploy-pages@v4
