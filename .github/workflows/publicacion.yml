@@ -1,11 +1,12 @@
 name: Publicar App
 
 on:
-permissions:
-  id-token: write
   push:
   workflow_dispatch:
 
+  permissions:
+  id-token: write
+  
 jobs:
   hola:
     runs-on: ubuntu-latest
