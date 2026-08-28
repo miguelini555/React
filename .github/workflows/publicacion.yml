@@ -39,11 +39,10 @@ jobs:
       - name: Build Vite
         run: npm run build
 
-      - name: Guardar Zip
-        uses: actions/upload-artifact@v4
-        with: 
-          name: aplicacion-web
-          path: ./tres-en-raya/dist
-
       - name: Configurar Github Pages
         uses: actions/configure-pages@v5
+
+      - name: Subir dist
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./tres-en-raya/dist
