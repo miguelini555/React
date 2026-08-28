@@ -44,3 +44,6 @@ jobs:
         with: 
           name: aplicacion-web
           path: ./tres-en-raya/dist
+
+      - name: Configurar Github Pages
+        uses: actions/configure-pages@v5
