@@ -1,8 +1,8 @@
 name: Publicar App
 
 on:
-  permissions:
-    id-token: write
+permissions:
+  id-token: write
   push:
   workflow_dispatch:
 
