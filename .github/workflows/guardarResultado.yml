@@ -43,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with: 
           name: aplicacion-web
-          path: ./dist/react/tres-en-raya
+          path: ./dist
