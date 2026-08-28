@@ -1,0 +1,46 @@
+name: Publicar App
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  hola:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./tres-en-raya
+
+    steps:
+      - name: Descargar Codigo
+        uses: actions/checkout@v4
+
+      - name: En que carpeta estoy
+        run: pwd
+
+      - name: Listado
+        run: ls -la
+
+      - name: Instalar node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verificar node
+        run: node --version
+
+      - name: Verificar npm
+        run: npm --version
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Build Vite
+        run: npm run build
+
+      - name: Guardar Zip
+        uses: actions/upload-artifact@v4
+        with: 
+          name: aplicacion-web
+          path: ./tres-en-raya/dist
