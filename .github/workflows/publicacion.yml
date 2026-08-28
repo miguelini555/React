@@ -4,8 +4,10 @@ on:
   push:
   workflow_dispatch:
 
-  permissions:
-    id-token: write
+permissions:
+  id-token: write
+  contents: read
+
 
 jobs:
   hola:
