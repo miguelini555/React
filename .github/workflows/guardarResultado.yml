@@ -4,6 +4,9 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+    id-token: write
+    
 jobs:
   hola:
     runs-on: ubuntu-latest
@@ -43,4 +46,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with: 
           name: aplicacion-web
-          path: ./tres-en-raya/dist
+        path: ./tres-en-raya/dist
