@@ -1,12 +1,12 @@
 import './App.css'
 import './TresEnRaya.css'
 import {createRoot} from 'react-dom/client'
-//import TresEnRaya from './TresEnRaya'
+import TresEnRaya from './TresEnRaya'
 import Ejemplollaves from './Ejemplollaves'
-import Contador from './Contador'
+//import Contador from './Contador'
 const contenedor = document.querySelector("#root")
 const root = createRoot(contenedor)
-//root.render(<Ejemplollaves/>)
-root.render(<Contador/>)
+root.render(<TresEnRaya/>)
+//root.render(<Contador/>)
 
 export default App
