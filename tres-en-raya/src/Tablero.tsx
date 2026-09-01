@@ -13,16 +13,12 @@ export default function TresEnRaya() {
         { fila: 3, columna: 2 },
         { fila: 3, columna: 1 }
     ]);
-
     const [comida] = useState<Celda>({
         fila: 1,
         columna: 5
     });
-
     const moverSerpiente = (direccion: string) => {
-
         const cabeza = serpiente[0];
-
         let nuevaCabeza = {
             fila: cabeza.fila,
             columna: cabeza.columna
@@ -31,31 +27,24 @@ export default function TresEnRaya() {
         if (direccion === 'arriba') {
             nuevaCabeza.fila--;
         }
-
         if (direccion === 'abajo') {
             nuevaCabeza.fila++;
         }
-
         if (direccion === 'izquierda') {
             nuevaCabeza.columna--;
         }
-
         if (direccion === 'derecha') {
             nuevaCabeza.columna++;
         }
-
         const nuevaSerpiente = [
             nuevaCabeza,
             ...serpiente
         ];
-
         nuevaSerpiente.pop();
-
         setSerpiente(nuevaSerpiente);
     };
 
     const manejarTecla = (evento: KeyboardEvent<HTMLDivElement>) => {
-
         if (evento.key === 'ArrowUp') {
             moverSerpiente('arriba');
         }

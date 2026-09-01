@@ -33,8 +33,8 @@ export default function TresEnRaya() {
             nuevaCabeza.columna === comida.columna
         ) {
             setComida({
-                fila: Math.floor(Math.random() * 8),
-                columna: Math.floor(Math.random() * 8)
+                fila: Math.floor(Math.random()*8),
+                columna: Math.floor(Math.random()*8)
             });
         }
         const nuevaSerpiente = [
