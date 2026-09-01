@@ -8,13 +8,16 @@ type Celda = {
 
 export default function TresEnRaya() {
 
-    const serpienteInicial: Celda[] = [
+    const [serpiente, setSerpiente] = useState<Celda[]>([
         { fila: 3, columna: 3 },
         { fila: 3, columna: 2 },
         { fila: 3, columna: 1 }
-    ];
+    ]);
 
-    const [serpiente, setSerpiente] = useState<Celda[]>(serpienteInicial);
+    const [comida] = useState<Celda>({
+        fila: 1,
+        columna: 5
+    });
 
     const moverSerpiente = (direccion: string) => {
 
@@ -26,19 +29,19 @@ export default function TresEnRaya() {
         };
 
         if (direccion === 'arriba') {
-            nuevaCabeza.fila = nuevaCabeza.fila - 1;
+            nuevaCabeza.fila--;
         }
 
         if (direccion === 'abajo') {
-            nuevaCabeza.fila = nuevaCabeza.fila + 1;
+            nuevaCabeza.fila++;
         }
 
         if (direccion === 'izquierda') {
-            nuevaCabeza.columna = nuevaCabeza.columna - 1;
+            nuevaCabeza.columna--;
         }
 
         if (direccion === 'derecha') {
-            nuevaCabeza.columna = nuevaCabeza.columna + 1;
+            nuevaCabeza.columna++;
         }
 
         const nuevaSerpiente = [
@@ -52,6 +55,7 @@ export default function TresEnRaya() {
     };
 
     const manejarTecla = (evento: KeyboardEvent<HTMLDivElement>) => {
+
         if (evento.key === 'ArrowUp') {
             moverSerpiente('arriba');
         }
@@ -61,7 +65,6 @@ export default function TresEnRaya() {
         if (evento.key === 'ArrowLeft') {
             moverSerpiente('izquierda');
         }
-
         if (evento.key === 'ArrowRight') {
             moverSerpiente('derecha');
         }
@@ -69,45 +72,33 @@ export default function TresEnRaya() {
 
     return (
         <div tabIndex={0} onKeyDown={manejarTecla}>
-
-            <p>
-                Serpiente por Turnos
-            </p>
-
+            <p>Serpiente por Turnos</p>
             <table>
                 <tbody>
-
                     {Array(8).fill(0).map((fila, indiceFila) => (
-
                         <tr key={indiceFila}>
-
                             {Array(8).fill(0).map((celda, indiceColumna) => {
-
                                 const esCabeza =
                                     serpiente[0].fila === indiceFila &&
                                     serpiente[0].columna === indiceColumna;
-
                                 const esCuerpo =
                                     serpiente.some((parte) =>
                                         parte.fila === indiceFila &&
                                         parte.columna === indiceColumna
                                     );
-
+                                const esComida =
+                                    comida.fila === indiceFila &&
+                                    comida.columna === indiceColumna;
                                 return (
                                     <td key={indiceColumna}>
-
                                         {esCabeza && '🐍'}
-
                                         {!esCabeza && esCuerpo && '🟢'}
-
+                                        {esComida && '🍎'}
                                     </td>
                                 );
                             })}
-
                         </tr>
-
                     ))}
-
                 </tbody>
             </table>
 
