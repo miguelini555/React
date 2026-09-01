@@ -6,24 +6,23 @@ type Celda = {
     columna: number;
 };
 
+type Direccion = 'arriba' | 'abajo' | 'izquierda' | 'derecha';
 export default function TresEnRaya() {
-
     const [serpiente, setSerpiente] = useState<Celda[]>([
         { fila: 3, columna: 3 },
         { fila: 3, columna: 2 },
         { fila: 3, columna: 1 }
     ]);
-    const [comida] = useState<Celda>({
+    const [comida, setComida] = useState<Celda>({
         fila: 1,
         columna: 5
     });
-    const moverSerpiente = (direccion: string) => {
+    const moverSerpiente = (direccion: Direccion) => {
         const cabeza = serpiente[0];
-        let nuevaCabeza = {
+        let nuevaCabeza: Celda = {
             fila: cabeza.fila,
             columna: cabeza.columna
         };
-
         if (direccion === 'arriba') {
             nuevaCabeza.fila--;
         }
@@ -36,7 +35,16 @@ export default function TresEnRaya() {
         if (direccion === 'derecha') {
             nuevaCabeza.columna++;
         }
-        const nuevaSerpiente = [
+        if (
+            nuevaCabeza.fila === comida.fila &&
+            nuevaCabeza.columna === comida.columna
+        ) {
+            setComida({
+                fila: Math.floor(Math.random() * 8),
+                columna: Math.floor(Math.random() * 8)
+            });
+        }
+        const nuevaSerpiente: Celda[] = [
             nuevaCabeza,
             ...serpiente
         ];
@@ -44,7 +52,7 @@ export default function TresEnRaya() {
         setSerpiente(nuevaSerpiente);
     };
 
-    const manejarTecla = (evento: KeyboardEvent<HTMLDivElement>) => {
+    const manejarTecla = (evento: KeyboardEvent<HTMLElement>) => {
         if (evento.key === 'ArrowUp') {
             moverSerpiente('arriba');
         }
@@ -60,10 +68,15 @@ export default function TresEnRaya() {
     };
 
     return (
-        <div tabIndex={0} onKeyDown={manejarTecla}>
-            <p>Serpiente por Turnos</p>
+        <section
+            tabIndex={0}
+            onKeyDown={manejarTecla}>
+            <p>
+                Serpiente por Turnos
+            </p>
             <table>
                 <tbody>
+
                     {Array(8).fill(0).map((fila, indiceFila) => (
                         <tr key={indiceFila}>
                             {Array(8).fill(0).map((celda, indiceColumna) => {
@@ -91,6 +104,6 @@ export default function TresEnRaya() {
                 </tbody>
             </table>
 
-        </div>
+        </section>
     );
 }
