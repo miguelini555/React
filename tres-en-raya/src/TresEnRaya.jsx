@@ -6,9 +6,9 @@ export default function TresEnRaya() {
         { fila: 3, columna: 2 },
         { fila: 3, columna: 1 }
     ]);
-    const [comida] = useState({
-        fila: 1,
-        columna: 5
+    const [comida, setComida] = useState({
+    fila: 1,
+    columna: 5
     });
     const moverSerpiente = (direccion) => {
         const cabeza = serpiente[0];
@@ -27,6 +27,15 @@ export default function TresEnRaya() {
         }
         if (direccion === 'derecha') {
             nuevaCabeza.columna++;
+        }
+        if (
+            nuevaCabeza.fila === comida.fila &&
+            nuevaCabeza.columna === comida.columna
+        ) {
+            setComida({
+                fila: Math.floor(Math.random() * 8),
+                columna: Math.floor(Math.random() * 8)
+            });
         }
         const nuevaSerpiente = [
             nuevaCabeza,
