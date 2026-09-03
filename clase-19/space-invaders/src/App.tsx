@@ -1,11 +1,15 @@
-import { useState } from 'react'
 import './App.css'
+import './SpaceInvader.css'
+import Reloj from './Reloj'
+import SpaceInvader from './SpaceInvader'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <p> Juego Space Invaders</p>
+    <>
+      <p>Juego Space Invaders</p>
+      <Reloj />
+      <SpaceInvader />
+    </>
   )
 }
 
