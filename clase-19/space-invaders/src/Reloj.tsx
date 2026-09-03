@@ -8,7 +8,6 @@ export default function Reloj() {
                 return anterior + 1;
             });
         }, 1000);
-
         return () => {
             clearInterval(reloj);
         };

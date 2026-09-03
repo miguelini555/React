@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import './SpaceInvader.css'
 
+//Cuadrado Municion
 export default function SpaceInvader() {
   const [bottom, setBottom] = useState<number>(5)
+//  const ANCHO_BLOQUE = 5
   useEffect(() => {
     const intervalo: number = setInterval(() => {
       setBottom((anterior: number): number => {
@@ -16,20 +18,19 @@ export default function SpaceInvader() {
 
   const estilo = {
     position: 'absolute' as const,
-    left: '50%',
+    left: '${bottom}rem',
     bottom: `${bottom}rem`,
     transform: 'translateX(-50%)',
     width: '2rem',
     height: '2rem',
-    backgroundColor: 'black'
+    backgroundColor: 'red'
   }
 
+// Arma rectangulo
   return (
     <>
-      <div className="arma">
-      </div>
-      <div style={estilo}>
-      </div>
+      <div className="arma"></div>
+      <div style={estilo}></div>
     </>
   )
 }
